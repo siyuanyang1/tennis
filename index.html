@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gender Inequality in Tennis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/2.2.0/scrollama.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>🎾 Gender Inequality in Tennis</h1>
+        <p>By Michelle Yang</p>
+    </header>
+    <div id="scrolly">
+        <div id="graphic">
+            <div id="graphic-content">
+                <div class="step" data-step="1">
+                    <p>Tennis has long been a sport where gender disparities are evident, from prize money to media coverage. This page explores the history and current state of gender inequality in tennis, highlighting key issues and advocating for change.</p>
+
+                    <h2><i class="fas fa-history"></i> Introduction & History</h2>
+                    <p>Gender inequality in tennis has been a longstanding issue particularly for women players who have faced disparities in prize money, media coverage, and opportunities compared to their male counterparts.</p>
+                    <p><strong>Example:</strong> <em>Billie Jean King</em> was awarded $600 while her male counterpart Ilie Nastase was awarded $3500 at the Italian Open.</p>
+                    <p><strong>Timeline:</strong></p>
+                    <ul>
+                        <li>1970: Billie Jean King was awarded $10,000 while Nastase was awarded $25,000 at the US Open.</li>
+                        <li>1973: Billie Jean King threatened to boycott the US Open due to unequal pay; US Open becomes the first Grand Slam to offer equal prize money.</li>
+                        <li>1995: Australian Open stopped giving equal prize money due to a lack of interest in women’s tennis (equal pay was reinstated in 2001).</li>
+                        <li>2007: Wimbledon agrees to equal pay; Venus Williams becomes the first women’s Wimbledon champion to earn the same amount as the men’s champion Roger Federer.</li>
+                        <li>2018: No women were listed in Forbes 100 highest-paid athletes.</li>
+                    </ul>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Billie_Jean_King.jpg/640px-Billie_Jean_King.jpg" alt="Billie Jean King" class="image">
+                </div>
+                <div class="step" data-step="2">
+                    <h2><i class="fas fa-dollar-sign"></i> Gender Pay Gap</h2>
+                    <p>Despite significant progress, challenges persist in prize money equality. For instance, <strong>Iga Swiatek</strong> earned less than her male counterparts in 2023 despite a dominant season.</p>
+                    <div id="pay-gap-chart"></div>
+                    <p><strong>Examples:</strong></p>
+                    <ul>
+                        <li>In 2023, Iga Swiatek had one of the most dominant seasons of any tennis player, claiming two of the four Grand Slams and winning 37 straight matches. However, by the end of the calendar year, Novak Djokovic and Carlos Alcaraz had both made more money from on-court performance despite each winning only one major and the former playing in six fewer tournaments than Swiatek.</li>
+                        <li>The prize money for the Cincinnati Open, a Masters 1000 ATP and WTA event, was $6.6 million for the men but only $2.79 million for women.</li>
+                    </ul>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Prize_Money.jpg" alt="Pay Gap" class="image">
+                </div>
+                <div class="step" data-step="3">
+                    <h2><i class="fas fa-calendar-alt"></i> Scheduling Unfairness</h2>
+                    <p>Women’s tournament locations and match times often cause them to be at a disadvantage. For example, during the 2019 French Open, women’s semifinals were played on outside courts due to rescheduling caused by weather, while men's semifinals retained main court status.</p>
+                    <p><strong>Examples:</strong></p>
+                    <ul>
+                        <li>2019 French Open: Weather conditions prompted a rainout, forcing a reconfiguration of the traditional schedule. The schedule was pushed back a day with the remaining quarterfinal matches for both men and women played Thursday. That forced the women’s semifinals back one day to Friday, where they were held on outside courts while the men’s semifinals remained on the main courts at Court Philippe-Chatrier.</li>
+                        <li>2023 WTA Finals: The court quality was unsatisfactory for the players, and inadequate considering that the WTA finals are meant to showcase the top eight female players in the world competing for the last title of the year. Players felt “disrespected” at this event, saying how the newly built stadium was “not at all ready for the matches.”</li>
+                    </ul>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Tennis_court.jpg" alt="Scheduling Unfairness" class="image">
+                </div>
+                <div class="step" data-step="4">
+                    <h2><i class="fas fa-newspaper"></i> Unequal Media Coverage</h2>
+                    <p>The amount of media coverage for men versus women is not equal, despite similar or higher viewership for some women's matches.</p>
+                    <div id="media-coverage-chart"></div>
+                    <p><strong>Examples:</strong></p>
+                    <ul>
+                        <li>The viewership of two Grand Slam finals was slightly higher for men, but it was higher for women in the other two, especially for the US Open.</li>
+                        <li>The number of articles and media coverage for men’s events is significantly higher than that for women’s events, despite women's matches having comparable viewership.</li>
+                    </ul>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Newspaper_hall.jpg" alt="Media Coverage" class="image">
+                </div>
+                <div class="step" data-step="5">
+                    <h2><i class="fas fa-chart-line"></i> Viewership Trends</h2>
+                    <p>Analysis of viewership trends for male and female players over the years shows significant disparities.</p>
+                    <div id="line-chart"></div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Tennis_crowd.jpg" alt="Viewership Trends" class="image">
+                </div>
+                <div class="step" data-step="6">
+                    <h2><i class="fas fa-donut"></i> Media Coverage Breakdown</h2>
+                    <p>A breakdown of media coverage shows a significant disparity between coverage for men and women.</p>
+                    <div id="donut-chart"></div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Media_coverage.jpg" alt="Media Coverage Breakdown" class="image">
+                </div>
+                <div class="step" data-step="7">
+                    <h2><i class="fas fa-user-md"></i> Gender Misconceptions</h2>
+                    <p>Some public misconceptions suggest women should be paid less because they play fewer sets in Grand Slams, but anatomical differences should not justify unequal treatment.</p>
+                    <p><strong>Scientific Basis:</strong></p>
+                    <ul>
+                        <li>“Direct and indirect effects of testosterone during male puberty include increased skeletal muscle mass due to larger muscle fiber cross-sectional area, especially fast type II fibers; lower percentage body fat; higher hemoglobin concentration and mass; larger ventricular mass (heart) and cardiac volumes; larger airways and lungs; greater body height; and longer limbs.”</li>
+                        <li>“Adult males are stronger, more powerful, and faster than females of similar age and training status. The sex difference in athletic performance, where endurance or muscular power is required, is roughly 10-30% depending on the event.”</li>
+                    </ul>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Bodybuilder.jpg" alt="Anatomy Differences" class="image">
+                </div>
+                <div class="step" data-step="8">
+                    <h2><i class="fas fa-user-friends"></i> Personal Experience and Advice</h2>
+                    <p><em>Michelle Yang</em> shares her experiences as a competitive junior tennis player, highlighting issues like unequal training opportunities and disrespectful behavior towards female players.</p>
+                    <p><strong>Examples:</strong></p>
+                    <ul>
+                        <li>Training facilities and coaches focus more on developing boys over girls.</li>
+                        <li>Boys receive more personal attention and private instruction.</li>
+                        <li>During co-ed group practices, boys receive more attention from all staff.</li>
+                        <li>Verbal insults towards the WTA with the goal of degrading their players.</li>
+                        <li>Boys being disrespectful towards girls, not taking them seriously, and mocking their play style or smaller size.</li>
+                        <li>Coaches dismissing boys' misbehavior with comments like “boys will be boys.”</li>
+                    </ul>
+                    <p><strong>Advice:</strong></p>
+                    <ul>
+                        <li>Use your voice through social media or interviews to raise awareness.</li>
+                        <li>Support fellow female players with encouragement and collaboration.</li>
+                        <li>Advocate for equal opportunities by speaking up about inequality and supporting initiatives that promote gender equality in sports.</li>
+                        <li>Mentorship: Be a role model by sharing your journey and advice with younger female tennis players or coaching/mentoring younger girls in tennis.</li>
+                        <li>Promote female role models by highlighting successful female tennis players, sharing their stories, and wearing apparel/using gear that supports female athletes and their achievements.</li>
+                    </ul>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Coach.jpg" alt="Personal Experience" class="image">
+                </div>
+                <div class="step" data-step="9">
+                    <h2><i class="fas fa-handshake"></i> Support Gender Equality in Sports</h2>
+                    <p>Sign this form to show support for the gender equality measures being promoted by the Summer 2024 Olympics to fight for gender inequality in sports that spread beyond the end of the Olympic Games.</p>
+                    <p><strong>Take Action:</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD8VHZ8lgF6v9qelGZ5i_AA3OeJlaODb1BL6mJQZrxn1FJGw/viewform" target="_blank">Click here to sign the petition and show your support for gender equality in sports.</a></p>
+                    <p>Share the petition with your friends and family to help spread the word. <strong>Together, we can make a difference!</strong> 🌟</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Protest.jpg" alt="Support Gender Equality" class="image">
+                </div>
+            </div>
+        </div>
+        <div id="scrolly-sidebar">
+            <div id="scrolly-step"></div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Michelle Yang</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
