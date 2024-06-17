@@ -6,14 +6,19 @@ function handleStepEnter(response) {
     step.classList.add('is-active');
 
     // Draw the appropriate chart based on the step index
-    if (response.index === 1) {
-        drawPayGapChart();
-    } else if (response.index === 3) {
-        drawMediaCoverageChart();
-    } else if (response.index === 4) {
-        drawLineChart();
-    } else if (response.index === 5) {
-        drawDonutChart();
+    switch (response.index) {
+        case 1:
+            drawPayGapChart();
+            break;
+        case 3:
+            drawMediaCoverageChart();
+            break;
+        case 4:
+            drawLineChart();
+            break;
+        case 5:
+            drawDonutChart();
+            break;
     }
 }
 
@@ -50,6 +55,9 @@ function drawPayGapChart() {
             ],
             types: {
                 Earnings: 'bar'
+            },
+            colors: {
+                Earnings: '#6a1b9a' // Match color scheme
             }
         },
         axis: {
@@ -67,9 +75,8 @@ function drawPayGapChart() {
         tooltip: {
             format: {
                 title: function (d) { return 'Player ' + d; },
-                value: function (value, ratio, id) {
-                    var format = d3.format('$');
-                    return format(value);
+                value: function (value) {
+                    return d3.format('$')(value);
                 }
             }
         }
@@ -86,6 +93,9 @@ function drawMediaCoverageChart() {
             ],
             types: {
                 Articles: 'bar'
+            },
+            colors: {
+                Articles: '#6a1b9a' // Match color scheme
             }
         },
         axis: {
@@ -103,7 +113,7 @@ function drawMediaCoverageChart() {
         tooltip: {
             format: {
                 title: function (d) { return 'Event ' + d; },
-                value: function (value, ratio, id) {
+                value: function (value) {
                     return value + ' articles';
                 }
             }
@@ -123,6 +133,10 @@ function drawLineChart() {
             types: {
                 'Male Players': 'line',
                 'Female Players': 'line'
+            },
+            colors: {
+                'Male Players': '#6a1b9a', // Match color scheme
+                'Female Players': '#ffeb3b' // Match color scheme
             }
         },
         axis: {
@@ -153,6 +167,10 @@ function drawDonutChart() {
         },
         donut: {
             title: 'Media Coverage'
+        },
+        colors: {
+            Men: '#6a1b9a', // Match color scheme
+            Women: '#ffeb3b' // Match color scheme
         }
     });
 }
